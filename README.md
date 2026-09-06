@@ -2,6 +2,8 @@
 
 Hello, this is the repository you should fork for task 3 
 
+![Eurus Logo](./Eurus_logo.jfif)
+
 Code submission are only accepted as pull requests for this task 
 
 Be sure to collaborate with everyone else, all those who participate in the process of figuring out the issue will get the bonus points 
