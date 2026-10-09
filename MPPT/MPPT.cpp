@@ -24,12 +24,15 @@ float MPPT(float V, float I)
   }
   else
   {
-    float slope = dI / dV;
-    float cond = -I / V;
+    /*float slope = dI / dV;
+    float cond = -I / V;*/
+    /* I suspict a divide by near zero for V */
+    float volt_change = V * dI;
+    float current_change = -I * dV;
 
-    if (abs(slope - cond) < MPPT_CONDUCTANCE_TOLERANCE)
+    if (abs(volt_change - current_change) < MPPT_CONDUCTANCE_TOLERANCE)
       { D = D_old; }
-    else if (slope > cond)
+    else if (volt_change > current_change)
       { D = D_old - MPPT_STEP_SIZE; }
     else
       { D = D_old + MPPT_STEP_SIZE; }
