@@ -12,5 +12,6 @@
 /* Noise Tolerance Thresholds */
 #define MPPT_VOLTAGE_TOLERANCE       0.0001
 #define MPPT_CONDUCTANCE_TOLERANCE   0.001
+#define MOOT_CURRENT_TOLERANCE       0.1
 
 #endif // MPPT_CONFIG_H

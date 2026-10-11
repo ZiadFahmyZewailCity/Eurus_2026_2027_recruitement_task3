@@ -15,12 +15,12 @@ float MPPT(float V, float I)
 
   if (abs(dV) < MPPT_VOLTAGE_TOLERANCE)
   {
-    if (dI > 0) 
-        { D = D_old - MPPT_STEP_SIZE; }
-    else if (dI < 0) 
+    if (dI > MPPT_CURRENT_TOLERANCE) 
         { D = D_old + MPPT_STEP_SIZE; }
-    else 
+    else if (abs(dI < MPPT_CURRENT_TOLERANCE)) 
         { D = D_old; }
+    else 
+        { D = D_old - MPPT_STEP_SIZE; }
   }
   else
   {
